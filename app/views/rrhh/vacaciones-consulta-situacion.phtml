@@ -1,0 +1,31 @@
+
+<div class="row" style="padding-top: 50px;">
+<div class="col-lg-8 center-block">
+
+    <div class="modal-content">
+    	<div  class="modal-header" style="background-color: #42B7E8;">
+    		<h2> Consultar Estado Vacaciones</h2>
+    	</div>
+
+		<div id="modalBodyCreate" class="modal-body" style="overflow: hidden; width: auto;">
+			<div class="row">
+				<div class="col-md-12  left-col-new form-modal" style="padding-top: 50px;">
+					<form action="<?php print($this->url->get('vacaciones/estado')) ?>" method="post">
+						<div class="form-group">
+								<div class="col-md-8 center-block">
+									<input type="text" class="form-control" placeholder="Ingresa tu rut o pasaporte. ej: 179455676"/>
+								</div>
+						</div>
+
+						<div class="form-group form-actions">
+							<div class="col-md-4 center-block " style="padding-top: 50px;">
+								<button type="submit" class="btn btn-block btn-zenta"><i class="fa fa-check"></i> Consultar</button>
+							</div>
+						</div>
+					<form>
+				</div>								
+			</div>
+   		 </div>
+	</div>
+</div>
+</div>

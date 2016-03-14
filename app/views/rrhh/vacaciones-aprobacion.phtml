@@ -1,0 +1,124 @@
+<div class="widget">
+    <div class="widget-simple">
+        <div class="row text-center">
+            <div class="col-lg-5">
+                <h1>Aprobación Solicitudes Pendientes<h1>
+            </div>
+
+            <div class="col-lg-5">
+                <h4>Jefatura: Miguel Jara Orozco<h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<?php if(isset($pcData['solicitudes']) && $pcData['solicitudes'] != ''){ ?>
+	<!-- Widgets Row -->
+	<div class="row">
+		<div class="col-lg-10 center-block">
+			<!-- tabla solicitudes -->
+			 <div class="table-responsive">
+	            <table id="solicitudes-table" class="table table-vcenter table-striped small-title">
+	                <thead>
+	                    <tr>
+	                        <th>Rut</th>
+	                        <th>Fecha Solicitud </th>
+	                        <th>Solicitante </th>
+	                        <th>Fecha Inicio</th>
+	                        <th>Fecha Fin</th>
+	                        <th>Nº días</th>
+	                        <th style="width: 150px;" class="text-center">Acción</th>
+	                    </tr>
+	                </thead>
+	                <tbody>
+
+	                <?php foreach ($pcData['solicitudes'] as $solicitud) {?>
+	                    <tr> 
+	                        <td><?php print($solicitud['rut']) ?></td>
+	                        <td><?php print($solicitud['fecha']) ?></td>
+	                        <td><?php print($solicitud['solicitante']) ?> </td>
+	                        <td><?php print($solicitud['finical']) ?></td>
+	                        <td><?php print($solicitud['ffin']) ?></td>
+	                        <td><?php print($solicitud['ndias']) ?></td>
+	                        <td class="text-center">
+	                            <div class="btn-group btn-group-xs">
+	                                <a href="#modal-solicitud" data-toggle="modal" title="Edit" class="btn btn-default"><i class="gi gi-check"></i> Aprobar </a>
+	                            </div>
+	                        </td>
+	                    </tr>
+	                 <?php } ?>
+	                </tbody>
+	            </table>
+	        </div>
+	        <!--/tabla solicitudes -->
+		</div>
+	</div>
+
+<?php } else { ?>
+
+<h4 style="margin-left: 30px;"> <i class="hi hi-check"></i> No hay solicitudes pendientes </h4>
+
+<?php } ?>
+
+
+<!-- Large Modal -->
+<div id="modal-solicitud" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="min-height: calc(100vh - 7.5em);">
+
+			<div id="modalBodyCreate" class="modal-body" style="overflow: hidden; width: auto;">
+					<div class="col-md-12 right-col-new">
+						<div class="col-lg-12">
+						<h4>
+					    	<img height="100" src="<?php print($this->url->get("img/logo.png"))?>"/>
+					    	<p class="pull-right " style="position: relative; line-height: 74px;">Fecha:29/02/2016</p>
+					    </h4>
+					    <div class="alert alert-warning alert-dismissable">
+			                <h4><i class="fa fa-exclamation-circle"></i> Advertencia: Esta solicitud aún no ha sido aprobada!</h4>
+			            </div>
+					    </div>
+					    
+					    <div class="col-lg-12">
+					        <h2>Solicitud de Vacaciones:</h2>
+					        
+							<p style="padding-left: 100px; font-size: 17px;"> Junto con saludarlos, yo Jorge Cociña Pacheco, solicito favor autorizar vacaciones por 3 días comenzando desde 29 de Febrero 2016 hasta 29 de Febrero 2016.
+							</p>
+						</div>
+
+
+					</div>							
+			</div>
+		 	<div class="firma-solicitud">
+		 		<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align: center;">
+						Jorge Cociña Pachecho <br>
+						17.617.837-k
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align: center;">
+						 Miguel Jara Orozco <br>
+						13.636.275-5
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group form-actions">
+				<div class="col-lg-10 center-block ">
+				<div class="row">
+					<div class="col-md-6">
+						<button  data-dismiss="modal" class="btn btn-block btn-default"><i class="fa fa-check"></i> Cerrar</button>
+					</div>
+					<div class="col-md-6">
+						<button  data-dismiss="modal" class="btn btn-block btn-zenta"><i class="fa fa-check"></i> Aprobar </button>
+					</div>
+				</div>		
+				</div>
+			</div>
+
+       	 </div>
+    </div>
+</div>
+
+<!-- END Large Modal -->

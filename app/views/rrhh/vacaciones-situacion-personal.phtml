@@ -1,0 +1,158 @@
+<div class="widget">
+    <div class="widget-simple">
+        <div class="row text-center">
+            <div class="col-lg-4">
+                <h1>Estado Vacaciones<h1>
+            </div>
+            <div class="col-lg-4">
+                <h4 class="remove-margin-bottom"><strong>Jorge Cociña Pacheco</strong><br>17.617.837-k <br><small>jorge.cocina@zentagroup.com <br> Desde el 21/12/2013</small></h4>
+            </div>
+             <div class="col-lg-4" style="padding: 15px">
+             <a href="#modal-nueva-sol" data-toggle="modal" class="btn btn-block btn-zenta" style="height: 40px;"><i class="fa fa-plus"></i> Nueva Solicitud</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- tabla Estado por periodo -->
+<div class="block">
+    <!-- Orders Title -->
+    <div class="block-title">
+        <div class="block-options pull-right">
+            <span class="label label-danger"><strong>Tienes 3 periodos o 30 días acumulados</strong></span>
+        </div>
+        <h2><i class="gi gi-log_book"></i> <strong>Vacaciones por periodo</strong></h2>
+    </div>
+    <!-- END tabla Title -->
+
+    <div class="table-responsive">
+        <table id="solicitudes-table" class="table table-vcenter table-striped small-title">
+            <thead>
+                <tr>
+                    <th>Periodo</th>
+                    <th>Año</th>
+                    <th>Fecha Inicio Periodo</th>
+                    <th>Fecha Fin Periodo</th>
+                    <th>Días Vacaciones</th>
+                    <th>Utilizado </th>
+                    <th>Saldo </th>
+                    <th>Pendiente Periodo </th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($pcData['estado'] as $estado) {?>
+                <tr> 
+                    <td><?php print($estado['periodo']) ?></td>
+                    <td><?php print($estado['anio']) ?></td>
+                    <td><?php print($estado['finicial']) ?></td>
+                    <td><?php print($estado['ffin']) ?></td>
+                    <td><?php print($estado['vacaciones']) ?></td>
+                    <td><?php print($estado['utilizado']) ?></td>
+                    <td><?php print($estado['saldo']) ?></td>
+                    <td><?php print($estado['pdteperiodo']) ?></td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--/tabla Estado por periodo -->
+
+
+
+
+<!-- tabla solicitudes -->
+<div class="block">
+    <!-- Orders Title -->
+    <div class="block-title">
+        <h2><i class="hi hi-cog"></i> <strong>Tus Solicitudes de Vacaciones</strong></h2>
+    </div>
+    <!-- END tabla Title -->
+
+    <div class="table-responsive">
+        <table id="solicitudes-table" class="table table-vcenter table-striped small-title">
+            <thead>
+                <tr>
+                    <th>Fecha Solicitud </th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Fin</th>
+                    <th>Nº días</th>
+                    <th>Jefe Directo</th>
+                    <th>Estado </th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <?php foreach ($pcData['solicitudes'] as $solicitud) {?>
+                <tr> 
+                    <td><?php print($solicitud['fecha']) ?></td>
+                    <td><?php print($solicitud['finical']) ?></td>
+                    <td><?php print($solicitud['ffin']) ?></td>
+                    <td><?php print($solicitud['ndias']) ?></td>
+                    <td><?php print($solicitud['jefedir']) ?></td>
+                    <td><p class="label <?php print($solicitud['estado'] == "aprobado"? 'label-success': 'label-default')?>"><?php print($solicitud['estado']) ?></p></td>
+
+                </tr>
+             <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--/tabla solicitudes -->
+
+
+
+<!-- Large Modal2 -->
+<div id="modal-nueva-sol" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div  class="modal-header" style="background-color: #42B7E8;">
+                <h2> Nueva Solicitud de Vacaciones</h2>
+           </div>
+
+            <div id="modalBodyCreate" class="modal-body" style="overflow: hidden; width: auto;">
+                <div class="row">
+                    <div class="col-md-12  left-col-new form-modal">
+
+                        <h5 style="margin-left: 10px;"><strong>Nombre:</strong> Jorge Cociña P, <strong>Superior directo:</strong> Miguel Jara O</h5>
+                        <form action="" class="form-horizontal">    
+                        
+
+                            <fieldset>
+                                <div class="form-group">
+                                <label class="col-md-4 control-label" for="example-datepicker">Desde</label>
+                                    <div class="col-md-6">
+                                        <input type="date" id="example-datepicker" name="example-datepicker" class="form-control input-datepicker" data-date-format="dd/mm/yy" placeholder="dd/mm/yy">
+                                    </div>
+                                </div>  
+                                <div class="form-group">
+                                <label class="col-md-4 control-label" for="example-datepicker">Hasta</label>
+                                    <div class="col-md-6">
+                                        <input type="date" id="example-datepicker" name="example-datepicker" class="form-control input-datepicker" data-date-format="dd/mm/yy" placeholder="dd/mm/yy">
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-info" role="alert">
+                                  <a href="#" class="alert-link">* Se enviará la solicitud a su superior directo</a>
+                                </div>                                  
+
+                            </fieldset>                                         
+                            </form>
+
+                        <div class="form-group form-actions">
+                            <div class="col-md-4 ">
+                                <button type="submit" class="btn btn-block btn-imannova-def" data-dismiss="modal"><i class="fa fa-ban"></i> cancelar</button>
+                            </div>
+                            <div class="col-md-8 ">
+                                <button type="reset" class="btn btn-block btn-imannova"><i class="fa fa-check"></i> Guardar</button>
+                            </div>
+                        </div>
+
+                    </div>                              
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+<!-- END Large Modal2-->

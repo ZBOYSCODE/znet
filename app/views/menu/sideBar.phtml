@@ -1,0 +1,59 @@
+ <div class="">
+            <!-- Main Sidebar -->
+            <div id="sidebar" style="margin-top: 59px;">
+                <!-- Wrapper for scrolling functionality -->
+                <div id="sidebar-scroll">
+                    <!-- Sidebar Content -->
+                    <div class="sidebar-content">
+                        <!-- Brand -->
+                        <div class="sidebar-brand">
+                            <i class="hi hi-cog"></i><span class="sidebar-nav-mini-hide"><strong>Zenta</strong>Intranet</span>
+                        </div>
+                         <div class="sidebar-brand">
+                            <p style="font-size: 14px; text-align: center;" class="sidebar-nav-mini-hide"> Recursos Humanos</p>
+                        </div>
+                        <!-- END Brand -->
+
+                        <!-- Sidebar Navigation -->
+                        <ul class="sidebar-nav">
+                            <li>
+                                <a href="<?php print($this->url->get('vacaciones/estado')) ?>" class="<?php print($sideBarSel=='estado'?'active':'') ?>"><i class="gi gi-log_book"></i><span class="sidebar-nav-mini-hide"> Vacaciones</span></a>
+                            </li>
+
+                            <li>
+                                <a href="#" data-toggle="tooltip" title="Función no disponible" class=""><i class="hi hi-file"></i><span class="sidebar-nav-mini-hide"> Certificados</span></a>
+                            </li>
+
+                            <li>
+                                <a href="#" data-toggle="tooltip" title="Función no disponible" class=""><i class="hi hi-folder-open"></i><span class="sidebar-nav-mini-hide"> Liquidaciones</span></a>
+                            </li>
+
+                            <li class="sidebar-header">
+                                    <span class="sidebar-header-options clearfix"><a href="javascript:void(0)" data-toggle="tooltip" title="Opciones para jefaturas"><i class="gi gi-user"></i></a></span>
+                                    <span class="sidebar-header-title">Jefaturas</span>
+                            </li>
+
+                             <li>
+                                <a href="<?php print($this->url->get('vacaciones/solicitudes')) ?>" data-toggle="tooltip" class="<?php print($sideBarSel=='solicitudes'?'active':'') ?>"><i class="gi gi-log_book"></i><span class="sidebar-nav-mini-hide"> Aprobar Solicitudes</span></a>
+                            </li>
+
+                            <li class="sidebar-header">
+                                    <span class="sidebar-header-options clearfix"><a href="javascript:void(0)" data-toggle="tooltip" title="Opciones para rrhh"><i class="gi gi-group"></i></a></span>
+                                    <span class="sidebar-header-title">rrhh admin</span>
+                            </li>
+
+                            <li>
+                                <a href="<?php print($this->url->get('vacaciones/gestion')) ?>" data-toggle="tooltip" class="<?php print($sideBarSel=='gestion'?'active':'') ?>"><i class="gi gi-cogwheels"></i><span class="sidebar-nav-mini-hide"> Gestión Vacaciones</span></a>
+                            </li>
+                        </ul>
+                        <!-- END Sidebar Navigation -->
+                    </div>
+                    <!-- END Sidebar Content -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </div>
+            <!-- END Main Sidebar -->
+</div>
+
+
+
