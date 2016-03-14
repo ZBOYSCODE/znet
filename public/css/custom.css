@@ -23,14 +23,14 @@ body {
 	color:#42B7E8;
 }
 
-..btn-zenta:focus {
+.btn-zenta:focus {
 	background-color: #42B7E8;
 	color:white;
 }
 
 .btn-imannova-def {
 	background-color: silver;
-	color: ;
+	color: transparent;
 }
 
 .btn-imannova-action {
@@ -358,6 +358,7 @@ body {
 }
 
 @media screen and (min-width: 1px) {
-.block, .widget {
-    margin-bottom: 16px;
+	.block, .widget {
+	    margin-bottom: 16px;
+	}
 }
